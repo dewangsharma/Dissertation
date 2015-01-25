@@ -1,6 +1,12 @@
 # Dissertation
 This is my Dissertation for Masters in Advanced Computer Science from University of Leicester, UK. 
 
+This project have been implemented to allow the Professor and Student to interact via Quiz and Feedback.
+Professor can create quiz, and lectures for feedback. Student can attend the quiz and give feedback for lectures. 
+Create reports and graphs based on the data. Thus it will allow the Professor and Student to Analysis their Results or Performance.
+
+Application Architecture Design:
+
 This is distributed application.
 
 DB Script is there to create the Database. 
