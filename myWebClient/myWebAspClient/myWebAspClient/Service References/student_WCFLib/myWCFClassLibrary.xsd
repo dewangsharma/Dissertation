@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/myWCFClassLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/myWCFClassLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="StudentProfile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_University_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Student_id" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="course_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="department_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="middlename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pass_value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profile_pic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="semester" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="status" type="xs:int" />
+      <xs:element minOccurs="0" name="verification_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StudentProfile" nillable="true" type="tns:StudentProfile" />
+</xs:schema>

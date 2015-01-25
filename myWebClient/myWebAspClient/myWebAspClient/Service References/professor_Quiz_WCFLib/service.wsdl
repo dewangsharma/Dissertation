@@ -1,0 +1,325 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ProfessorQuiz" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Professor" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IProfessorQuiz_CreateQuiz_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateQuiz" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_CreateQuiz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateQuizResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_UpdateQuiz_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuiz" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_UpdateQuiz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuizResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetQuizById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuizById" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetQuizById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuizByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllQuizByProf_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuizByProf" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllQuizByProf_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuizByProfResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllQuizByModule_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuizByModule" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllQuizByModule_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuizByModuleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_CreateQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_CreateQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_Question_Create_InputMessage">
+    <wsdl:part name="parameters" element="tns:Question_Create" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_Question_Create_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Question_CreateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_UpdateQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_UpdateQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_DeleteQuestion_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQuestion" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_DeleteQuestion_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQuestionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetQuestionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionById" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetQuestionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetQuestionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllQuestionByQuiz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuestionByQuiz" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllQuestionByQuiz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllQuestionByQuizResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_CreateOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOption" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_CreateOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_UpdateOption_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOption" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_UpdateOption_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateOptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetOptionById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptionById" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetOptionById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOptionByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllOptionByQues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOptionByQues" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_GetAllOptionByQues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllOptionByQuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_DeleteOptionByOptionId_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOptionByOptionId" />
+  </wsdl:message>
+  <wsdl:message name="IProfessorQuiz_DeleteOptionByOptionId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteOptionByOptionIdResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IProfessorQuiz">
+    <wsdl:operation name="CreateQuiz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/CreateQuiz" message="tns:IProfessorQuiz_CreateQuiz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/CreateQuizResponse" message="tns:IProfessorQuiz_CreateQuiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuiz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/UpdateQuiz" message="tns:IProfessorQuiz_UpdateQuiz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/UpdateQuizResponse" message="tns:IProfessorQuiz_UpdateQuiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuizById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetQuizById" message="tns:IProfessorQuiz_GetQuizById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetQuizByIdResponse" message="tns:IProfessorQuiz_GetQuizById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuizByProf">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllQuizByProf" message="tns:IProfessorQuiz_GetAllQuizByProf_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllQuizByProfResponse" message="tns:IProfessorQuiz_GetAllQuizByProf_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuizByModule">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllQuizByModule" message="tns:IProfessorQuiz_GetAllQuizByModule_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllQuizByModuleResponse" message="tns:IProfessorQuiz_GetAllQuizByModule_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/CreateQuestion" message="tns:IProfessorQuiz_CreateQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/CreateQuestionResponse" message="tns:IProfessorQuiz_CreateQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Question_Create">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/Question_Create" message="tns:IProfessorQuiz_Question_Create_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/Question_CreateResponse" message="tns:IProfessorQuiz_Question_Create_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/UpdateQuestion" message="tns:IProfessorQuiz_UpdateQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/UpdateQuestionResponse" message="tns:IProfessorQuiz_UpdateQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuestion">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/DeleteQuestion" message="tns:IProfessorQuiz_DeleteQuestion_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/DeleteQuestionResponse" message="tns:IProfessorQuiz_DeleteQuestion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetQuestionById" message="tns:IProfessorQuiz_GetQuestionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetQuestionByIdResponse" message="tns:IProfessorQuiz_GetQuestionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuestionByQuiz">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllQuestionByQuiz" message="tns:IProfessorQuiz_GetAllQuestionByQuiz_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllQuestionByQuizResponse" message="tns:IProfessorQuiz_GetAllQuestionByQuiz_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/CreateOption" message="tns:IProfessorQuiz_CreateOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/CreateOptionResponse" message="tns:IProfessorQuiz_CreateOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOption">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/UpdateOption" message="tns:IProfessorQuiz_UpdateOption_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/UpdateOptionResponse" message="tns:IProfessorQuiz_UpdateOption_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetOptionById" message="tns:IProfessorQuiz_GetOptionById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetOptionByIdResponse" message="tns:IProfessorQuiz_GetOptionById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOptionByQues">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllOptionByQues" message="tns:IProfessorQuiz_GetAllOptionByQues_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/GetAllOptionByQuesResponse" message="tns:IProfessorQuiz_GetAllOptionByQues_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptionByOptionId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IProfessorQuiz/DeleteOptionByOptionId" message="tns:IProfessorQuiz_DeleteOptionByOptionId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IProfessorQuiz/DeleteOptionByOptionIdResponse" message="tns:IProfessorQuiz_DeleteOptionByOptionId_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProfessorQuiz" type="tns:IProfessorQuiz">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CreateQuiz">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/CreateQuiz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuiz">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/UpdateQuiz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuizById">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetQuizById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuizByProf">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetAllQuizByProf" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuizByModule">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetAllQuizByModule" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateQuestion">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/CreateQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Question_Create">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/Question_Create" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuestion">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/UpdateQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuestion">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/DeleteQuestion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetQuestionById">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetQuestionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllQuestionByQuiz">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetAllQuestionByQuiz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateOption">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/CreateOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOption">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/UpdateOption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetOptionById">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetOptionById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllOptionByQues">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/GetAllOptionByQues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOptionByOptionId">
+      <soap:operation soapAction="http://tempuri.org/IProfessorQuiz/DeleteOptionByOptionId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProfessorQuiz">
+    <wsdl:port name="BasicHttpBinding_IProfessorQuiz" binding="tns:BasicHttpBinding_IProfessorQuiz">
+      <soap:address location="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorQuiz" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

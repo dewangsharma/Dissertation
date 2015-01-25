@@ -1,0 +1,642 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="myProjectModelNS" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblDepartmentModule">
+    <Key>
+      <PropertyRef Name="PK_Module_id" />
+    </Key>
+    <Property Name="PK_Module_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="module_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="FK_Department_id" Type="Int32" />
+    <Property Name="module_code" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="term" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUniversityDepartment" Relationship="Self.FK__tblDepart__FK_De__29572725" FromRole="tblDepartmentModules" ToRole="tblUniversityDepartments" />
+    <NavigationProperty Name="tblLectures" Relationship="Self.FK__tblLectur__FK_Mo__33D4B598" FromRole="tblDepartmentModules" ToRole="tblLectures" />
+    <NavigationProperty Name="tblProfessorModules" Relationship="Self.FK__tblProfes__FK_Mo__2C3393D0" FromRole="tblDepartmentModules" ToRole="tblProfessorModules" />
+    <NavigationProperty Name="tblStudentModules" Relationship="Self.FK__tblStuden__FK_Mo__300424B4" FromRole="tblDepartmentModules" ToRole="tblStudentModules" />
+  </EntityType>
+  <EntityType Name="tblFeedbackResult">
+    <Key>
+      <PropertyRef Name="PK_Feedback_result_id" />
+    </Key>
+    <Property Name="PK_Feedback_result_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Feedback_id" Type="Int32" />
+    <Property Name="FK_Student_id" Type="Int32" />
+    <Property Name="feedback_answer" Type="Single" />
+    <Property Name="feedback_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblFeedback" Relationship="Self.FK__tblFeedba__FK_Fe__3A81B327" FromRole="tblFeedbackResults" ToRole="tblFeedbacks" />
+    <NavigationProperty Name="tblStudent" Relationship="Self.FK__tblFeedba__FK_St__3B75D760" FromRole="tblFeedbackResults" ToRole="tblStudents" />
+  </EntityType>
+  <EntityType Name="tblFeedback">
+    <Key>
+      <PropertyRef Name="PK_Feedback_id" />
+    </Key>
+    <Property Name="PK_Feedback_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Lecture_id" Type="Int32" />
+    <Property Name="feedback_value" Type="Single" />
+    <Property Name="end_date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblFeedbackResults" Relationship="Self.FK__tblFeedba__FK_Fe__3A81B327" FromRole="tblFeedbacks" ToRole="tblFeedbackResults" />
+    <NavigationProperty Name="tblLecture" Relationship="Self.FK__tblFeedba__FK_Le__37A5467C" FromRole="tblFeedbacks" ToRole="tblLectures" />
+  </EntityType>
+  <EntityType Name="tblLecture">
+    <Key>
+      <PropertyRef Name="PK_Lecture_id" />
+    </Key>
+    <Property Name="PK_Lecture_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Module_id" Type="Int32" />
+    <Property Name="FK_Professor_id" Type="Int32" />
+    <Property Name="lecture_title" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="lecture_date" Type="DateTime" Precision="0" />
+    <Property Name="lecture_time" Type="Time" Precision="7" />
+    <Property Name="lecture_status" Type="Int32" />
+    <NavigationProperty Name="tblDepartmentModule" Relationship="Self.FK__tblLectur__FK_Mo__33D4B598" FromRole="tblLectures" ToRole="tblDepartmentModules" />
+    <NavigationProperty Name="tblFeedbacks" Relationship="Self.FK__tblFeedba__FK_Le__37A5467C" FromRole="tblLectures" ToRole="tblFeedbacks" />
+    <NavigationProperty Name="tblProfessor" Relationship="Self.FK__tblLectur__FK_Pr__34C8D9D1" FromRole="tblLectures" ToRole="tblProfessors" />
+  </EntityType>
+  <EntityType Name="tblProfessorLogin">
+    <Key>
+      <PropertyRef Name="PK_Professor_login_id" />
+    </Key>
+    <Property Name="PK_Professor_login_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Professor_id" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pass_value" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastLogindate" Type="DateTime" Precision="0" />
+    <Property Name="isLogin" Type="Int32" />
+    <Property Name="session_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tblProfessor" Relationship="Self.FK__tblProfes__FK_Pr__1B0907CE" FromRole="tblProfessorLogins" ToRole="tblProfessors" />
+  </EntityType>
+  <EntityType Name="tblProfessorModule">
+    <Key>
+      <PropertyRef Name="PK_ProfessorModule_id" />
+    </Key>
+    <Property Name="PK_ProfessorModule_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Professor_id" Type="Int32" />
+    <Property Name="FK_Module_id" Type="Int32" />
+    <NavigationProperty Name="tblDepartmentModule" Relationship="Self.FK__tblProfes__FK_Mo__2C3393D0" FromRole="tblProfessorModules" ToRole="tblDepartmentModules" />
+    <NavigationProperty Name="tblProfessor" Relationship="Self.FK__tblProfes__FK_Pr__2D27B809" FromRole="tblProfessorModules" ToRole="tblProfessors" />
+  </EntityType>
+  <EntityType Name="tblProfessor">
+    <Key>
+      <PropertyRef Name="PK_Professor_id" />
+    </Key>
+    <Property Name="PK_Professor_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="middlename" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="profile_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FK_University_id" Type="Int32" />
+    <Property Name="department_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pass_value" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="verification_code" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tblLectures" Relationship="Self.FK__tblLectur__FK_Pr__34C8D9D1" FromRole="tblProfessors" ToRole="tblLectures" />
+    <NavigationProperty Name="tblProfessorLogins" Relationship="Self.FK__tblProfes__FK_Pr__1B0907CE" FromRole="tblProfessors" ToRole="tblProfessorLogins" />
+    <NavigationProperty Name="tblProfessorModules" Relationship="Self.FK__tblProfes__FK_Pr__2D27B809" FromRole="tblProfessors" ToRole="tblProfessorModules" />
+    <NavigationProperty Name="tblUniversity" Relationship="Self.FK__tblProfes__FK_Un__15502E78" FromRole="tblProfessors" ToRole="tblUniversities" />
+    <NavigationProperty Name="tblQuizDetails" Relationship="Self.FK__tblQuizDe__FK_Pr__1DE57479" FromRole="tblProfessors" ToRole="tblQuizDetails" />
+  </EntityType>
+  <EntityType Name="tblQuizDetail">
+    <Key>
+      <PropertyRef Name="PK_Quiz_id" />
+    </Key>
+    <Property Name="PK_Quiz_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Professor_id" Type="Int32" Nullable="false" />
+    <Property Name="quiz_title" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="quiz_date" Type="DateTime" Precision="7" />
+    <Property Name="isTimeup" Type="Int32" />
+    <Property Name="quiz_length" Type="Single" />
+    <Property Name="quiz_weightage" Type="Single" />
+    <Property Name="quiz_status" Type="Int32" />
+    <Property Name="quiz_end_date" Type="DateTime" Precision="7" />
+    <Property Name="quiz_update" Type="DateTime" Precision="7" />
+    <Property Name="FK_ModuleId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tblProfessor" Relationship="Self.FK__tblQuizDe__FK_Pr__1DE57479" FromRole="tblQuizDetails" ToRole="tblProfessors" />
+    <NavigationProperty Name="tblQuizQuestions" Relationship="Self.FK__tblQuizQu__FK_Qu__20C1E124" FromRole="tblQuizDetails" ToRole="tblQuizQuestions" />
+    <NavigationProperty Name="tblQuizResults" Relationship="myProjectModelNS.FK__tblQuizRe__FK_Qu__5FB337D6" FromRole="tblQuizDetail" ToRole="tblQuizResult" />
+  </EntityType>
+  <EntityType Name="tblQuizOption">
+    <Key>
+      <PropertyRef Name="PK_Option_id" />
+    </Key>
+    <Property Name="PK_Option_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Question_id" Type="Int32" Nullable="false" />
+    <Property Name="option_value" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="isAnswer" Type="Int32" />
+    <NavigationProperty Name="tblQuizQuestion" Relationship="Self.FK__tblQuizOp__FK_Qu__239E4DCF" FromRole="tblQuizOptions" ToRole="tblQuizQuestions" />
+    <NavigationProperty Name="tblQuizResults" Relationship="myProjectModelNS.FK__tblQuizRe__FK_Qu__60A75C0F" FromRole="tblQuizOption" ToRole="tblQuizResult" />
+  </EntityType>
+  <EntityType Name="tblQuizQuestion">
+    <Key>
+      <PropertyRef Name="PK_Question_id" />
+    </Key>
+    <Property Name="PK_Question_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Quiz_id" Type="Int32" Nullable="false" />
+    <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="question_type" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblQuizDetail" Relationship="Self.FK__tblQuizQu__FK_Qu__20C1E124" FromRole="tblQuizQuestions" ToRole="tblQuizDetails" />
+    <NavigationProperty Name="tblQuizOptions" Relationship="Self.FK__tblQuizOp__FK_Qu__239E4DCF" FromRole="tblQuizQuestions" ToRole="tblQuizOptions" />
+    <NavigationProperty Name="tblQuizResults" Relationship="myProjectModelNS.FK__tblQuizRe__FK_Qu__5DCAEF64" FromRole="tblQuizQuestion" ToRole="tblQuizResult" />
+    <Property Name="hint" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="marks" Type="Double" />
+  </EntityType>
+  <EntityType Name="tblStudentLogin">
+    <Key>
+      <PropertyRef Name="PK_Student_login_id" />
+    </Key>
+    <Property Name="PK_Student_login_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Student_id" Type="Int32" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pass_value" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastLogindate" Type="DateTime" Precision="0" />
+    <Property Name="isLogin" Type="Int32" />
+    <Property Name="session_id" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tblStudent" Relationship="Self.FK__tblStuden__FK_St__182C9B23" FromRole="tblStudentLogins" ToRole="tblStudents" />
+  </EntityType>
+  <EntityType Name="tblStudentModule">
+    <Key>
+      <PropertyRef Name="PK_StudentModule_id" />
+    </Key>
+    <Property Name="PK_StudentModule_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_Student_id" Type="Int32" />
+    <Property Name="FK_Module_id" Type="Int32" />
+    <NavigationProperty Name="tblDepartmentModule" Relationship="Self.FK__tblStuden__FK_Mo__300424B4" FromRole="tblStudentModules" ToRole="tblDepartmentModules" />
+    <NavigationProperty Name="tblStudent" Relationship="Self.FK__tblStuden__FK_St__30F848ED" FromRole="tblStudentModules" ToRole="tblStudents" />
+  </EntityType>
+  <EntityType Name="tblStudent">
+    <Key>
+      <PropertyRef Name="PK_Student_id" />
+    </Key>
+    <Property Name="PK_Student_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="firstname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="middlename" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="lastname" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="profile_pic" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FK_University_id" Type="Int32" />
+    <Property Name="department_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="course_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="semester" Type="Int32" />
+    <Property Name="mobile" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pass_value" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="verification_code" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="status" Type="Int32" />
+    <NavigationProperty Name="tblFeedbackResults" Relationship="Self.FK__tblFeedba__FK_St__3B75D760" FromRole="tblStudents" ToRole="tblFeedbackResults" />
+    <NavigationProperty Name="tblStudentLogins" Relationship="Self.FK__tblStuden__FK_St__182C9B23" FromRole="tblStudents" ToRole="tblStudentLogins" />
+    <NavigationProperty Name="tblStudentModules" Relationship="Self.FK__tblStuden__FK_St__30F848ED" FromRole="tblStudents" ToRole="tblStudentModules" />
+    <NavigationProperty Name="tblUniversity" Relationship="Self.FK__tblStuden__FK_Un__1273C1CD" FromRole="tblStudents" ToRole="tblUniversities" />
+  </EntityType>
+  <EntityType Name="tblUniversity">
+    <Key>
+      <PropertyRef Name="PK_University_id" />
+    </Key>
+    <Property Name="PK_University_id" Type="Int32" Nullable="false" />
+    <Property Name="university_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblProfessors" Relationship="Self.FK__tblProfes__FK_Un__15502E78" FromRole="tblUniversities" ToRole="tblProfessors" />
+    <NavigationProperty Name="tblStudents" Relationship="Self.FK__tblStuden__FK_Un__1273C1CD" FromRole="tblUniversities" ToRole="tblStudents" />
+    <NavigationProperty Name="tblUniversityDepartments" Relationship="Self.FK__tblUniver__FK_Un__267ABA7A" FromRole="tblUniversities" ToRole="tblUniversityDepartments" />
+  </EntityType>
+  <EntityType Name="tblUniversityDepartment">
+    <Key>
+      <PropertyRef Name="PK_Department_id" />
+    </Key>
+    <Property Name="PK_Department_id" Type="Int32" Nullable="false" />
+    <Property Name="FK_University_id" Type="Int32" />
+    <Property Name="department_name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblDepartmentModules" Relationship="Self.FK__tblDepart__FK_De__29572725" FromRole="tblUniversityDepartments" ToRole="tblDepartmentModules" />
+    <NavigationProperty Name="tblUniversity" Relationship="Self.FK__tblUniver__FK_Un__267ABA7A" FromRole="tblUniversityDepartments" ToRole="tblUniversities" />
+  </EntityType>
+  <Association Name="FK__tblDepart__FK_De__29572725">
+    <End Role="tblUniversityDepartments" Type="Self.tblUniversityDepartment" Multiplicity="0..1" />
+    <End Role="tblDepartmentModules" Type="Self.tblDepartmentModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUniversityDepartments">
+        <PropertyRef Name="PK_Department_id" />
+      </Principal>
+      <Dependent Role="tblDepartmentModules">
+        <PropertyRef Name="FK_Department_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLectur__FK_Mo__33D4B598">
+    <End Role="tblDepartmentModules" Type="Self.tblDepartmentModule" Multiplicity="0..1" />
+    <End Role="tblLectures" Type="Self.tblLecture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDepartmentModules">
+        <PropertyRef Name="PK_Module_id" />
+      </Principal>
+      <Dependent Role="tblLectures">
+        <PropertyRef Name="FK_Module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblProfes__FK_Mo__2C3393D0">
+    <End Role="tblDepartmentModules" Type="Self.tblDepartmentModule" Multiplicity="0..1" />
+    <End Role="tblProfessorModules" Type="Self.tblProfessorModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDepartmentModules">
+        <PropertyRef Name="PK_Module_id" />
+      </Principal>
+      <Dependent Role="tblProfessorModules">
+        <PropertyRef Name="FK_Module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblStuden__FK_Mo__300424B4">
+    <End Role="tblDepartmentModules" Type="Self.tblDepartmentModule" Multiplicity="0..1" />
+    <End Role="tblStudentModules" Type="Self.tblStudentModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblDepartmentModules">
+        <PropertyRef Name="PK_Module_id" />
+      </Principal>
+      <Dependent Role="tblStudentModules">
+        <PropertyRef Name="FK_Module_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblFeedba__FK_Fe__3A81B327">
+    <End Role="tblFeedbacks" Type="Self.tblFeedback" Multiplicity="0..1" />
+    <End Role="tblFeedbackResults" Type="Self.tblFeedbackResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblFeedbacks">
+        <PropertyRef Name="PK_Feedback_id" />
+      </Principal>
+      <Dependent Role="tblFeedbackResults">
+        <PropertyRef Name="FK_Feedback_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblFeedba__FK_St__3B75D760">
+    <End Role="tblStudents" Type="Self.tblStudent" Multiplicity="0..1" />
+    <End Role="tblFeedbackResults" Type="Self.tblFeedbackResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudents">
+        <PropertyRef Name="PK_Student_id" />
+      </Principal>
+      <Dependent Role="tblFeedbackResults">
+        <PropertyRef Name="FK_Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblFeedba__FK_Le__37A5467C">
+    <End Role="tblLectures" Type="Self.tblLecture" Multiplicity="0..1" />
+    <End Role="tblFeedbacks" Type="Self.tblFeedback" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLectures">
+        <PropertyRef Name="PK_Lecture_id" />
+      </Principal>
+      <Dependent Role="tblFeedbacks">
+        <PropertyRef Name="FK_Lecture_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblLectur__FK_Pr__34C8D9D1">
+    <End Role="tblProfessors" Type="Self.tblProfessor" Multiplicity="0..1" />
+    <End Role="tblLectures" Type="Self.tblLecture" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProfessors">
+        <PropertyRef Name="PK_Professor_id" />
+      </Principal>
+      <Dependent Role="tblLectures">
+        <PropertyRef Name="FK_Professor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblProfes__FK_Pr__1B0907CE">
+    <End Role="tblProfessors" Type="Self.tblProfessor" Multiplicity="1" />
+    <End Role="tblProfessorLogins" Type="Self.tblProfessorLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProfessors">
+        <PropertyRef Name="PK_Professor_id" />
+      </Principal>
+      <Dependent Role="tblProfessorLogins">
+        <PropertyRef Name="FK_Professor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblProfes__FK_Pr__2D27B809">
+    <End Role="tblProfessors" Type="Self.tblProfessor" Multiplicity="0..1" />
+    <End Role="tblProfessorModules" Type="Self.tblProfessorModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProfessors">
+        <PropertyRef Name="PK_Professor_id" />
+      </Principal>
+      <Dependent Role="tblProfessorModules">
+        <PropertyRef Name="FK_Professor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblProfes__FK_Un__15502E78">
+    <End Role="tblUniversities" Type="Self.tblUniversity" Multiplicity="0..1" />
+    <End Role="tblProfessors" Type="Self.tblProfessor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUniversities">
+        <PropertyRef Name="PK_University_id" />
+      </Principal>
+      <Dependent Role="tblProfessors">
+        <PropertyRef Name="FK_University_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblQuizDe__FK_Pr__1DE57479">
+    <End Role="tblProfessors" Type="Self.tblProfessor" Multiplicity="1" />
+    <End Role="tblQuizDetails" Type="Self.tblQuizDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblProfessors">
+        <PropertyRef Name="PK_Professor_id" />
+      </Principal>
+      <Dependent Role="tblQuizDetails">
+        <PropertyRef Name="FK_Professor_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblQuizQu__FK_Qu__20C1E124">
+    <End Role="tblQuizDetails" Type="Self.tblQuizDetail" Multiplicity="1" />
+    <End Role="tblQuizQuestions" Type="Self.tblQuizQuestion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuizDetails">
+        <PropertyRef Name="PK_Quiz_id" />
+      </Principal>
+      <Dependent Role="tblQuizQuestions">
+        <PropertyRef Name="FK_Quiz_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblQuizOp__FK_Qu__239E4DCF">
+    <End Role="tblQuizQuestions" Type="Self.tblQuizQuestion" Multiplicity="1" />
+    <End Role="tblQuizOptions" Type="Self.tblQuizOption" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuizQuestions">
+        <PropertyRef Name="PK_Question_id" />
+      </Principal>
+      <Dependent Role="tblQuizOptions">
+        <PropertyRef Name="FK_Question_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblStuden__FK_St__182C9B23">
+    <End Role="tblStudents" Type="Self.tblStudent" Multiplicity="1" />
+    <End Role="tblStudentLogins" Type="Self.tblStudentLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudents">
+        <PropertyRef Name="PK_Student_id" />
+      </Principal>
+      <Dependent Role="tblStudentLogins">
+        <PropertyRef Name="FK_Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblStuden__FK_St__30F848ED">
+    <End Role="tblStudents" Type="Self.tblStudent" Multiplicity="0..1" />
+    <End Role="tblStudentModules" Type="Self.tblStudentModule" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudents">
+        <PropertyRef Name="PK_Student_id" />
+      </Principal>
+      <Dependent Role="tblStudentModules">
+        <PropertyRef Name="FK_Student_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblStuden__FK_Un__1273C1CD">
+    <End Role="tblUniversities" Type="Self.tblUniversity" Multiplicity="0..1" />
+    <End Role="tblStudents" Type="Self.tblStudent" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUniversities">
+        <PropertyRef Name="PK_University_id" />
+      </Principal>
+      <Dependent Role="tblStudents">
+        <PropertyRef Name="FK_University_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblUniver__FK_Un__267ABA7A">
+    <End Role="tblUniversities" Type="Self.tblUniversity" Multiplicity="0..1" />
+    <End Role="tblUniversityDepartments" Type="Self.tblUniversityDepartment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUniversities">
+        <PropertyRef Name="PK_University_id" />
+      </Principal>
+      <Dependent Role="tblUniversityDepartments">
+        <PropertyRef Name="FK_University_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="myProjectEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblDepartmentModules" EntityType="Self.tblDepartmentModule" />
+    <EntitySet Name="tblFeedbackResults" EntityType="Self.tblFeedbackResult" />
+    <EntitySet Name="tblFeedbacks" EntityType="Self.tblFeedback" />
+    <EntitySet Name="tblLectures" EntityType="Self.tblLecture" />
+    <EntitySet Name="tblProfessorLogins" EntityType="Self.tblProfessorLogin" />
+    <EntitySet Name="tblProfessorModules" EntityType="Self.tblProfessorModule" />
+    <EntitySet Name="tblProfessors" EntityType="Self.tblProfessor" />
+    <EntitySet Name="tblQuizDetails" EntityType="Self.tblQuizDetail" />
+    <EntitySet Name="tblQuizOptions" EntityType="Self.tblQuizOption" />
+    <EntitySet Name="tblQuizQuestions" EntityType="Self.tblQuizQuestion" />
+    <EntitySet Name="tblStudentLogins" EntityType="Self.tblStudentLogin" />
+    <EntitySet Name="tblStudentModules" EntityType="Self.tblStudentModule" />
+    <EntitySet Name="tblStudents" EntityType="Self.tblStudent" />
+    <EntitySet Name="tblUniversities" EntityType="Self.tblUniversity" />
+    <EntitySet Name="tblUniversityDepartments" EntityType="Self.tblUniversityDepartment" />
+    <AssociationSet Name="FK__tblDepart__FK_De__29572725" Association="Self.FK__tblDepart__FK_De__29572725">
+      <End Role="tblUniversityDepartments" EntitySet="tblUniversityDepartments" />
+      <End Role="tblDepartmentModules" EntitySet="tblDepartmentModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLectur__FK_Mo__33D4B598" Association="Self.FK__tblLectur__FK_Mo__33D4B598">
+      <End Role="tblDepartmentModules" EntitySet="tblDepartmentModules" />
+      <End Role="tblLectures" EntitySet="tblLectures" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblProfes__FK_Mo__2C3393D0" Association="Self.FK__tblProfes__FK_Mo__2C3393D0">
+      <End Role="tblDepartmentModules" EntitySet="tblDepartmentModules" />
+      <End Role="tblProfessorModules" EntitySet="tblProfessorModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblStuden__FK_Mo__300424B4" Association="Self.FK__tblStuden__FK_Mo__300424B4">
+      <End Role="tblDepartmentModules" EntitySet="tblDepartmentModules" />
+      <End Role="tblStudentModules" EntitySet="tblStudentModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblFeedba__FK_Fe__3A81B327" Association="Self.FK__tblFeedba__FK_Fe__3A81B327">
+      <End Role="tblFeedbacks" EntitySet="tblFeedbacks" />
+      <End Role="tblFeedbackResults" EntitySet="tblFeedbackResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblFeedba__FK_St__3B75D760" Association="Self.FK__tblFeedba__FK_St__3B75D760">
+      <End Role="tblStudents" EntitySet="tblStudents" />
+      <End Role="tblFeedbackResults" EntitySet="tblFeedbackResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblFeedba__FK_Le__37A5467C" Association="Self.FK__tblFeedba__FK_Le__37A5467C">
+      <End Role="tblLectures" EntitySet="tblLectures" />
+      <End Role="tblFeedbacks" EntitySet="tblFeedbacks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblLectur__FK_Pr__34C8D9D1" Association="Self.FK__tblLectur__FK_Pr__34C8D9D1">
+      <End Role="tblProfessors" EntitySet="tblProfessors" />
+      <End Role="tblLectures" EntitySet="tblLectures" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblProfes__FK_Pr__1B0907CE" Association="Self.FK__tblProfes__FK_Pr__1B0907CE">
+      <End Role="tblProfessors" EntitySet="tblProfessors" />
+      <End Role="tblProfessorLogins" EntitySet="tblProfessorLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblProfes__FK_Pr__2D27B809" Association="Self.FK__tblProfes__FK_Pr__2D27B809">
+      <End Role="tblProfessors" EntitySet="tblProfessors" />
+      <End Role="tblProfessorModules" EntitySet="tblProfessorModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblProfes__FK_Un__15502E78" Association="Self.FK__tblProfes__FK_Un__15502E78">
+      <End Role="tblUniversities" EntitySet="tblUniversities" />
+      <End Role="tblProfessors" EntitySet="tblProfessors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblQuizDe__FK_Pr__1DE57479" Association="Self.FK__tblQuizDe__FK_Pr__1DE57479">
+      <End Role="tblProfessors" EntitySet="tblProfessors" />
+      <End Role="tblQuizDetails" EntitySet="tblQuizDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblQuizQu__FK_Qu__20C1E124" Association="Self.FK__tblQuizQu__FK_Qu__20C1E124">
+      <End Role="tblQuizDetails" EntitySet="tblQuizDetails" />
+      <End Role="tblQuizQuestions" EntitySet="tblQuizQuestions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblQuizOp__FK_Qu__239E4DCF" Association="Self.FK__tblQuizOp__FK_Qu__239E4DCF">
+      <End Role="tblQuizQuestions" EntitySet="tblQuizQuestions" />
+      <End Role="tblQuizOptions" EntitySet="tblQuizOptions" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblStuden__FK_St__182C9B23" Association="Self.FK__tblStuden__FK_St__182C9B23">
+      <End Role="tblStudents" EntitySet="tblStudents" />
+      <End Role="tblStudentLogins" EntitySet="tblStudentLogins" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblStuden__FK_St__30F848ED" Association="Self.FK__tblStuden__FK_St__30F848ED">
+      <End Role="tblStudents" EntitySet="tblStudents" />
+      <End Role="tblStudentModules" EntitySet="tblStudentModules" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblStuden__FK_Un__1273C1CD" Association="Self.FK__tblStuden__FK_Un__1273C1CD">
+      <End Role="tblUniversities" EntitySet="tblUniversities" />
+      <End Role="tblStudents" EntitySet="tblStudents" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblUniver__FK_Un__267ABA7A" Association="Self.FK__tblUniver__FK_Un__267ABA7A">
+      <End Role="tblUniversities" EntitySet="tblUniversities" />
+      <End Role="tblUniversityDepartments" EntitySet="tblUniversityDepartments" />
+    </AssociationSet>
+    <FunctionImport Name="spDeleteQuestionWithOption">
+      <Parameter Name="questionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="tblQuizResults" EntityType="myProjectModelNS.tblQuizResult" />
+    <AssociationSet Name="FK__tblQuizRe__FK_Qu__5FB337D6" Association="myProjectModelNS.FK__tblQuizRe__FK_Qu__5FB337D6">
+      <End Role="tblQuizDetail" EntitySet="tblQuizDetails" />
+      <End Role="tblQuizResult" EntitySet="tblQuizResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblQuizRe__FK_Qu__60A75C0F" Association="myProjectModelNS.FK__tblQuizRe__FK_Qu__60A75C0F">
+      <End Role="tblQuizOption" EntitySet="tblQuizOptions" />
+      <End Role="tblQuizResult" EntitySet="tblQuizResults" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblQuizRe__FK_Qu__5DCAEF64" Association="myProjectModelNS.FK__tblQuizRe__FK_Qu__5DCAEF64">
+      <End Role="tblQuizQuestion" EntitySet="tblQuizQuestions" />
+      <End Role="tblQuizResult" EntitySet="tblQuizResults" />
+    </AssociationSet>
+    <FunctionImport Name="spDeleteOption">
+      <Parameter Name="optionId" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="sysdiagrams" EntityType="myProjectModelNS.sysdiagram" />
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(myProjectModelNS.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(myProjectModelNS.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="tblQuizResult">
+    <Key>
+      <PropertyRef Name="PK_QuestionResult_Id" />
+    </Key>
+    <Property Name="PK_QuestionResult_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FK_QuizId" Type="Int32" />
+    <Property Name="FK_QuestionId" Type="Int32" />
+    <Property Name="FK_OptionId" Type="Int32" />
+    <Property Name="FK_studentId" Type="Int32" />
+    <Property Name="marks" Type="Double" />
+    <Property Name="isAnswered" Type="Int32" />
+    <Property Name="update" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblQuizDetail" Relationship="myProjectModelNS.FK__tblQuizRe__FK_Qu__5FB337D6" FromRole="tblQuizResult" ToRole="tblQuizDetail" />
+    <NavigationProperty Name="tblQuizOption" Relationship="myProjectModelNS.FK__tblQuizRe__FK_Qu__60A75C0F" FromRole="tblQuizResult" ToRole="tblQuizOption" />
+    <NavigationProperty Name="tblQuizQuestion" Relationship="myProjectModelNS.FK__tblQuizRe__FK_Qu__5DCAEF64" FromRole="tblQuizResult" ToRole="tblQuizQuestion" />
+    <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <Association Name="FK__tblQuizRe__FK_Qu__5FB337D6">
+    <End Type="myProjectModelNS.tblQuizDetail" Role="tblQuizDetail" Multiplicity="0..1" />
+    <End Type="myProjectModelNS.tblQuizResult" Role="tblQuizResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuizDetail">
+        <PropertyRef Name="PK_Quiz_id" />
+      </Principal>
+      <Dependent Role="tblQuizResult">
+        <PropertyRef Name="FK_QuizId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblQuizRe__FK_Qu__60A75C0F">
+    <End Type="myProjectModelNS.tblQuizOption" Role="tblQuizOption" Multiplicity="0..1" />
+    <End Type="myProjectModelNS.tblQuizResult" Role="tblQuizResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuizOption">
+        <PropertyRef Name="PK_Option_id" />
+      </Principal>
+      <Dependent Role="tblQuizResult">
+        <PropertyRef Name="FK_QuizId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblQuizRe__FK_Qu__5DCAEF64">
+    <End Type="myProjectModelNS.tblQuizQuestion" Role="tblQuizQuestion" Multiplicity="0..1" />
+    <End Type="myProjectModelNS.tblQuizResult" Role="tblQuizResult" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblQuizQuestion">
+        <PropertyRef Name="PK_Question_id" />
+      </Principal>
+      <Dependent Role="tblQuizResult">
+        <PropertyRef Name="FK_QuestionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

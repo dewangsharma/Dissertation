@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="c0e649f3-2f2c-4b86-9337-60d715099c2d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="fb3fdb23-6b69-415c-9c42-448fc6ed485b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="9d5e9628-995a-4f28-b157-b43eda02e12b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="541afd3e-837f-4de8-ba42-50c69f03b4db" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" />
+    <MetadataFile FileName="myWCFClassLibrary.Student.xsd" MetadataType="Schema" ID="8d16a1d9-1928-446e-a9fc-ce8aede995c2" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" />
+    <MetadataFile FileName="myWCFClassLibrary.xsd" MetadataType="Schema" ID="3400fbb9-5dcd-4040-93d1-435e77be7352" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" />
+    <MetadataFile FileName="myWCFClassLibrary.Professor.xsd" MetadataType="Schema" ID="d13ccc95-81f6-4195-b481-a4c34c618d89" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Student/Quiz/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Student" />
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Professor" />
+  <xs:element name="startQuiz">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Student" minOccurs="0" name="quizRData" nillable="true" type="q1:QuizResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="startQuizResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="startQuizResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="quizAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Student" minOccurs="0" name="quizRData" nillable="true" type="q2:ArrayOfQuizResultModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="quizAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="quizAnswerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQuizByModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="moduleId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllQuizByModuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Professor" minOccurs="0" name="GetAllQuizByModuleResult" nillable="true" type="q3:ArrayOfquizModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStdudentAttempt">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentId" type="xs:int" />
+        <xs:element minOccurs="0" name="quizId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetStdudentAttemptResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetStdudentAttemptResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createFeedbackAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Student" minOccurs="0" name="feedModel" nillable="true" type="q4:FeedbackAnswer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createFeedbackAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="createFeedbackAnswerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createFeedAnswer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="studentId" type="xs:int" />
+        <xs:element minOccurs="0" name="lectureId" type="xs:int" />
+        <xs:element minOccurs="0" name="answer" type="xs:float" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="createFeedAnswerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="createFeedAnswerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFeedbackByModule">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="moduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="studentId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllFeedbackByModuleResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/myWCFClassLibrary.Professor" minOccurs="0" name="GetAllFeedbackByModuleResult" nillable="true" type="q5:ArrayOflectureModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

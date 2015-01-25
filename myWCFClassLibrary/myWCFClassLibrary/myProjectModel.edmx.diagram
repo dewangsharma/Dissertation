@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6253973b4c124cb8a195b248b709e56e" Name="Diagram1" ZoomLevel="35">
+        <EntityTypeShape EntityType="myProjectModelNS.tblDepartmentModule" Width="1.5" PointX="0.875" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblFeedbackResult" Width="1.5" PointX="5.125" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblFeedback" Width="1.5" PointX="2.875" PointY="15" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblLecture" Width="1.5" PointX="0.875" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblProfessorLogin" Width="1.5" PointX="5.125" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblProfessorModule" Width="1.5" PointX="3.125" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblProfessor" Width="1.5" PointX="3.125" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblQuizDetail" Width="1.5" PointX="5.125" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblQuizOption" Width="1.5" PointX="7.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblQuizQuestion" Width="1.5" PointX="7.25" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblStudentLogin" Width="1.5" PointX="5.125" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblStudentModule" Width="1.5" PointX="1" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblStudent" Width="1.5" PointX="2.875" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblUniversity" Width="1.5" PointX="1" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblUniversityDepartment" Width="1.5" PointX="1" PointY="5.25" IsExpanded="true" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblDepart__FK_De__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblLectur__FK_Mo__33D4B598" ManuallyRouted="false" >
+          <ConnectorPoint PointX="1.03125" PointY="15.124492187500003" />
+          <ConnectorPoint PointX="1.03125" PointY="18.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="myProjectModelNS.FK__tblProfes__FK_Mo__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblStuden__FK_Mo__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblFeedba__FK_Fe__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblFeedba__FK_St__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblFeedba__FK_Le__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblLectur__FK_Pr__34C8D9D1" ManuallyRouted="false" >
+          <ConnectorPoint PointX="3.25" PointY="9.3939518229166659" />
+          <ConnectorPoint PointX="3.117886088665883" PointY="9.3939518229166659" />
+          <ConnectorPoint PointX="2.9512194219992161" PointY="9.3939518229166659" />
+          <ConnectorPoint PointX="2.8079268063314959" PointY="9.3939518229166659" />
+          <ConnectorPoint PointX="2.8079268063314959" PointY="15.875" />
+          <ConnectorPoint PointX="1.8333333333333333" PointY="15.875" />
+          <ConnectorPoint PointX="1.6666666666666667" PointY="15.875" />
+          <ConnectorPoint PointX="1.1145833333333333" PointY="15.875" />
+          <ConnectorPoint PointX="0.94791666666666663" PointY="15.875" />
+          <ConnectorPoint PointX="0.85315040140699916" PointY="15.875" />
+          <ConnectorPoint PointX="0.85315040140699916" PointY="18.375" />
+          <ConnectorPoint PointX="0.94791666666666663" PointY="18.375" />
+          <ConnectorPoint PointX="1.1145833333333333" PointY="18.375" />
+          <ConnectorPoint PointX="1.7968769999999998" PointY="18.375" />
+          <ConnectorPoint PointX="1.7968769999999998" PointY="18.75" />
+        </AssociationConnector>
+        <AssociationConnector Association="myProjectModelNS.FK__tblProfes__FK_Pr__1B0907CE" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblProfes__FK_Pr__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblProfes__FK_Un__15502E78" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblQuizDe__FK_Pr__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblQuizQu__FK_Qu__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblQuizOp__FK_Qu__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblStuden__FK_St__182C9B23" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblStuden__FK_St__30F848ED" ManuallyRouted="false" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblStuden__FK_Un__1273C1CD" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="myProjectModelNS.FK__tblUniver__FK_Un__267ABA7A" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="myProjectModelNS.tblQuizResult" Width="1.5" PointX="7.25" PointY="3" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblQuizRe__FK_Qu__5FB337D6" />
+        <AssociationConnector Association="myProjectModelNS.FK__tblQuizRe__FK_Qu__60A75C0F" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="myProjectModelNS.FK__tblQuizRe__FK_Qu__5DCAEF64" />
+        <EntityTypeShape EntityType="myProjectModelNS.sysdiagram" Width="1.5" PointX="1" PointY="0.5" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

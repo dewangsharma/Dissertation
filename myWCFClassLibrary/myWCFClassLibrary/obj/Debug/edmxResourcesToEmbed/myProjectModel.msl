@@ -1,0 +1,243 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="myProjectModelNSStoreContainer" CdmEntityContainer="myProjectEntities">
+    <EntitySetMapping Name="tblDepartmentModules">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblDepartmentModule">
+        <MappingFragment StoreEntitySet="tblDepartmentModules">
+          <ScalarProperty Name="PK_Module_id" ColumnName="PK_Module_id" />
+          <ScalarProperty Name="module_name" ColumnName="module_name" />
+          <ScalarProperty Name="FK_Department_id" ColumnName="FK_Department_id" />
+          <ScalarProperty Name="module_code" ColumnName="module_code" />
+          <ScalarProperty Name="term" ColumnName="term" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeedbackResults">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblFeedbackResult">
+        <MappingFragment StoreEntitySet="tblFeedbackResults">
+          <ScalarProperty Name="PK_Feedback_result_id" ColumnName="PK_Feedback_result_id" />
+          <ScalarProperty Name="FK_Feedback_id" ColumnName="FK_Feedback_id" />
+          <ScalarProperty Name="FK_Student_id" ColumnName="FK_Student_id" />
+          <ScalarProperty Name="feedback_answer" ColumnName="feedback_answer" />
+          <ScalarProperty Name="feedback_date" ColumnName="feedback_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeedbacks">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblFeedback">
+        <MappingFragment StoreEntitySet="tblFeedbacks">
+          <ScalarProperty Name="PK_Feedback_id" ColumnName="PK_Feedback_id" />
+          <ScalarProperty Name="FK_Lecture_id" ColumnName="FK_Lecture_id" />
+          <ScalarProperty Name="feedback_value" ColumnName="feedback_value" />
+          <ScalarProperty Name="end_date" ColumnName="end_date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLectures">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblLecture">
+        <MappingFragment StoreEntitySet="tblLectures">
+          <ScalarProperty Name="PK_Lecture_id" ColumnName="PK_Lecture_id" />
+          <ScalarProperty Name="FK_Module_id" ColumnName="FK_Module_id" />
+          <ScalarProperty Name="FK_Professor_id" ColumnName="FK_Professor_id" />
+          <ScalarProperty Name="lecture_title" ColumnName="lecture_title" />
+          <ScalarProperty Name="lecture_date" ColumnName="lecture_date" />
+          <ScalarProperty Name="lecture_time" ColumnName="lecture_time" />
+          <ScalarProperty Name="lecture_status" ColumnName="lecture_status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProfessorLogins">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblProfessorLogin">
+        <MappingFragment StoreEntitySet="tblProfessorLogins">
+          <ScalarProperty Name="PK_Professor_login_id" ColumnName="PK_Professor_login_id" />
+          <ScalarProperty Name="FK_Professor_id" ColumnName="FK_Professor_id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass_value" ColumnName="pass_value" />
+          <ScalarProperty Name="lastLogindate" ColumnName="lastLogindate" />
+          <ScalarProperty Name="isLogin" ColumnName="isLogin" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProfessorModules">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblProfessorModule">
+        <MappingFragment StoreEntitySet="tblProfessorModules">
+          <ScalarProperty Name="PK_ProfessorModule_id" ColumnName="PK_ProfessorModule_id" />
+          <ScalarProperty Name="FK_Professor_id" ColumnName="FK_Professor_id" />
+          <ScalarProperty Name="FK_Module_id" ColumnName="FK_Module_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblProfessors">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblProfessor">
+        <MappingFragment StoreEntitySet="tblProfessors">
+          <ScalarProperty Name="PK_Professor_id" ColumnName="PK_Professor_id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="FK_University_id" ColumnName="FK_University_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass_value" ColumnName="pass_value" />
+          <ScalarProperty Name="verification_code" ColumnName="verification_code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuizDetails">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblQuizDetail">
+        <MappingFragment StoreEntitySet="tblQuizDetails">
+          <ScalarProperty Name="PK_Quiz_id" ColumnName="PK_Quiz_id" />
+          <ScalarProperty Name="FK_Professor_id" ColumnName="FK_Professor_id" />
+          <ScalarProperty Name="quiz_title" ColumnName="quiz_title" />
+          <ScalarProperty Name="quiz_date" ColumnName="quiz_date" />
+          <ScalarProperty Name="isTimeup" ColumnName="isTimeup" />
+          <ScalarProperty Name="quiz_length" ColumnName="quiz_length" />
+          <ScalarProperty Name="quiz_weightage" ColumnName="quiz_weightage" />
+          <ScalarProperty Name="quiz_status" ColumnName="quiz_status" />
+          <ScalarProperty Name="quiz_end_date" ColumnName="quiz_end_date" />
+          <ScalarProperty Name="quiz_update" ColumnName="quiz_update" />
+          <ScalarProperty Name="FK_ModuleId" ColumnName="FK_ModuleId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuizOptions">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblQuizOption">
+        <MappingFragment StoreEntitySet="tblQuizOptions">
+          <ScalarProperty Name="PK_Option_id" ColumnName="PK_Option_id" />
+          <ScalarProperty Name="FK_Question_id" ColumnName="FK_Question_id" />
+          <ScalarProperty Name="option_value" ColumnName="option_value" />
+          <ScalarProperty Name="isAnswer" ColumnName="isAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblQuizQuestions">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblQuizQuestion">
+        <MappingFragment StoreEntitySet="tblQuizQuestions">
+          <ScalarProperty Name="marks" ColumnName="marks" />
+          <ScalarProperty Name="hint" ColumnName="hint" />
+          <ScalarProperty Name="PK_Question_id" ColumnName="PK_Question_id" />
+          <ScalarProperty Name="FK_Quiz_id" ColumnName="FK_Quiz_id" />
+          <ScalarProperty Name="question" ColumnName="question" />
+          <ScalarProperty Name="question_type" ColumnName="question_type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudentLogins">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblStudentLogin">
+        <MappingFragment StoreEntitySet="tblStudentLogins">
+          <ScalarProperty Name="PK_Student_login_id" ColumnName="PK_Student_login_id" />
+          <ScalarProperty Name="FK_Student_id" ColumnName="FK_Student_id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass_value" ColumnName="pass_value" />
+          <ScalarProperty Name="lastLogindate" ColumnName="lastLogindate" />
+          <ScalarProperty Name="isLogin" ColumnName="isLogin" />
+          <ScalarProperty Name="session_id" ColumnName="session_id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudentModules">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblStudentModule">
+        <MappingFragment StoreEntitySet="tblStudentModules">
+          <ScalarProperty Name="PK_StudentModule_id" ColumnName="PK_StudentModule_id" />
+          <ScalarProperty Name="FK_Student_id" ColumnName="FK_Student_id" />
+          <ScalarProperty Name="FK_Module_id" ColumnName="FK_Module_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudents">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblStudent">
+        <MappingFragment StoreEntitySet="tblStudents">
+          <ScalarProperty Name="PK_Student_id" ColumnName="PK_Student_id" />
+          <ScalarProperty Name="firstname" ColumnName="firstname" />
+          <ScalarProperty Name="middlename" ColumnName="middlename" />
+          <ScalarProperty Name="lastname" ColumnName="lastname" />
+          <ScalarProperty Name="profile_pic" ColumnName="profile_pic" />
+          <ScalarProperty Name="FK_University_id" ColumnName="FK_University_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+          <ScalarProperty Name="course_name" ColumnName="course_name" />
+          <ScalarProperty Name="semester" ColumnName="semester" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="pass_value" ColumnName="pass_value" />
+          <ScalarProperty Name="verification_code" ColumnName="verification_code" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUniversities">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblUniversity">
+        <MappingFragment StoreEntitySet="tblUniversities">
+          <ScalarProperty Name="PK_University_id" ColumnName="PK_University_id" />
+          <ScalarProperty Name="university_name" ColumnName="university_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUniversityDepartments">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblUniversityDepartment">
+        <MappingFragment StoreEntitySet="tblUniversityDepartments">
+          <ScalarProperty Name="PK_Department_id" ColumnName="PK_Department_id" />
+          <ScalarProperty Name="FK_University_id" ColumnName="FK_University_id" />
+          <ScalarProperty Name="department_name" ColumnName="department_name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spDeleteQuestionWithOption" FunctionName="myProjectModelNS.Store.spDeleteQuestionWithOption" />
+    <EntitySetMapping Name="tblQuizResults">
+      <EntityTypeMapping TypeName="myProjectModelNS.tblQuizResult">
+        <MappingFragment StoreEntitySet="tblQuizResult">
+          <ScalarProperty Name="answer" ColumnName="answer" />
+          <ScalarProperty Name="update" ColumnName="update" />
+          <ScalarProperty Name="isAnswered" ColumnName="isAnswered" />
+          <ScalarProperty Name="marks" ColumnName="marks" />
+          <ScalarProperty Name="FK_studentId" ColumnName="FK_studentId" />
+          <ScalarProperty Name="FK_OptionId" ColumnName="FK_OptionId" />
+          <ScalarProperty Name="FK_QuestionId" ColumnName="FK_QuestionId" />
+          <ScalarProperty Name="FK_QuizId" ColumnName="FK_QuizId" />
+          <ScalarProperty Name="PK_QuestionResult_Id" ColumnName="PK_QuestionResult_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spDeleteOption" FunctionName="myProjectModelNS.Store.spDeleteOption" />
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="myProjectModelNS.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="myProjectModelNS.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="myProjectModelNS.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="myProjectModelNS.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="myProjectModelNS.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="myProjectModelNS.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="myProjectModelNS.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="myProjectModelNS.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="myProjectModelNS.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="myProjectModelNS.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

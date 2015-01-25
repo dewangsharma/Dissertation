@@ -1,0 +1,836 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{621958E8-AA99-43D0-9DBF-6EB36EA8A0A9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>myWebAspClient</RootNamespace>
+    <AssemblyName>myWebAspClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IncludeIisSettings>true</IncludeIisSettings>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.7.1213, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\SoftwareSetup\AjaxControlToolkit.Binary.NET40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.0.0\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.10.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <Private>True</Private>
+      <HintPath>..\packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\myStyle.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\StarFilled.png" />
+    <Content Include="Error.aspx" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Login.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Professors\Feed_Report.aspx" />
+    <Content Include="Professors\Lectures_Create.aspx" />
+    <Content Include="Professors\Quiz_Attend.aspx" />
+    <Content Include="Professors\CreateQuiz.aspx" />
+    <Content Include="Professors\css\bootstrap.css" />
+    <Content Include="Professors\css\bootstrap.min.css" />
+    <Content Include="Professors\css\plugins\morris.css" />
+    <Content Include="Professors\css\sb-admin.css" />
+    <Content Include="Professors\Default.aspx" />
+    <Content Include="Professors\font-awesome-4.1.0\css\font-awesome.css" />
+    <Content Include="Professors\font-awesome-4.1.0\css\font-awesome.min.css" />
+    <Content Include="Professors\font-awesome-4.1.0\fonts\fontawesome-webfont.svg" />
+    <Content Include="Professors\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Professors\js\bootstrap.js" />
+    <Content Include="Professors\js\bootstrap.min.js" />
+    <Content Include="Professors\js\jquery.js" />
+    <Content Include="Professors\js\plugins\flot\excanvas.min.js" />
+    <Content Include="Professors\js\plugins\flot\flot-data.js" />
+    <Content Include="Professors\js\plugins\flot\jquery.flot.js" />
+    <Content Include="Professors\js\plugins\flot\jquery.flot.pie.js" />
+    <Content Include="Professors\js\plugins\flot\jquery.flot.resize.js" />
+    <Content Include="Professors\js\plugins\flot\jquery.flot.tooltip.min.js" />
+    <Content Include="Professors\js\plugins\morris\morris-data.js" />
+    <Content Include="Professors\js\plugins\morris\morris.js" />
+    <Content Include="Professors\js\plugins\morris\morris.min.js" />
+    <Content Include="Professors\js\plugins\morris\raphael.min.js" />
+    <Content Include="Professors\LICENSE" />
+    <Content Include="Professors\Quiz_All.aspx" />
+    <Content Include="Professors\Quiz_Create.aspx" />
+    <Content Include="Professors\Quiz_Report.aspx" />
+    <Content Include="Professors\Quiz_Report2.aspx" />
+    <Content Include="Professors\Quiz_View.aspx" />
+    <Content Include="Professors\README.md" />
+    <Content Include="Professors\font-awesome-4.1.0\fonts\fontawesome-webfont.eot" />
+    <Content Include="Professors\font-awesome-4.1.0\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Professors\font-awesome-4.1.0\fonts\fontawesome-webfont.woff" />
+    <Content Include="Professors\font-awesome-4.1.0\fonts\FontAwesome.otf" />
+    <Content Include="Professors\font-awesome-4.1.0\less\bordered-pulled.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\core.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\fixed-width.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\font-awesome.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\icons.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\larger.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\list.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\mixins.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\path.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\rotated-flipped.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\spinning.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\stacked.less" />
+    <Content Include="Professors\font-awesome-4.1.0\less\variables.less" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\font-awesome.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_bordered-pulled.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_core.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_fixed-width.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_icons.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_larger.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_list.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_mixins.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_path.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_rotated-flipped.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_spinning.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_stacked.scss" />
+    <Content Include="Professors\font-awesome-4.1.0\scss\_variables.scss" />
+    <Content Include="Professors\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Professors\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Professors\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Professors\professor.Master" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
+    <None Include="Properties\PublishProfiles\myAspWeb.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Professors\tryGrid.aspx" />
+    <Content Include="Professors\WebForm1.aspx" />
+    <Content Include="Professors\WebForm2.aspx" />
+    <Content Include="Registration.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <None Include="Service References\account_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\account_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\account_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\modules_WCFLib\myWCFClassLibrary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\modules_WCFLib\myWebAspClient.modules_WCFLib.DepartmentModule1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\modules_WCFLib\service.wsdl" />
+    <None Include="Service References\modules_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\modules_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Feedback_WCFLib\myWCFClassLibrary.Professor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\professor_Feedback_WCFLib\myWebAspClient.professor_Feedback_WCFLib.lectureModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Feedback_WCFLib\myWebAspClient.professor_Feedback_WCFLib.feedbackModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\professor_Feedback_WCFLib\service.wsdl" />
+    <None Include="Service References\professor_Feedback_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Feedback_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Quiz_WCFLib\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Quiz_WCFLib\myWCFClassLibrary.Professor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\modules_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\modules_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\modules_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\professor_Feedback_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\professor_Feedback_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\professor_Feedback_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\professor_Quiz_WCFLib\myWebAspClient.professor_Quiz_WCFLib.optionModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Quiz_WCFLib\myWebAspClient.professor_Quiz_WCFLib.questionModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Quiz_WCFLib\myWebAspClient.professor_Quiz_WCFLib.quizModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\professor_Quiz_WCFLib\service.wsdl" />
+    <None Include="Service References\professor_Quiz_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Quiz_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\professor_Report_WCFLib\myWebAspClient.professor_Report_WCFLib.getAllModuleByTermResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Report_WCFLib\myWebAspClient.professor_Report_WCFLib.getAllQuizByModuleResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Report_WCFLib\myWebAspClient.professor_Report_WCFLib.getAllQuestionsByQuizResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\professor_Report_WCFLib\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\professor_Report_WCFLib\myWebAspClient.professor_Report_WCFLib.getStatusByQuestionIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Report_WCFLib\myWebAspClient.professor_Report_WCFLib.getAllFeedbacksResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\professor_Report_WCFLib\myWebAspClient.professor_Report_WCFLib.getAllQuizbyStudentResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\professor_Report_WCFLib\service.wsdl" />
+    <None Include="Service References\professor_Report_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Report_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Report_WCFLib\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_WCFLib\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\professor_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\professor_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\professor_Quiz_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\professor_Quiz_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\professor_Quiz_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\student_Quiz_WCFLib\myWCFClassLibrary.Professor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_Quiz_WCFLib\myWCFClassLibrary.Student.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_Quiz_WCFLib\myWCFClassLibrary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_Report_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\professor_Report_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\professor_Report_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Service References\student_Quiz_WCFLib\myWebAspClient.student_Quiz_WCFLib.quizModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\student_Quiz_WCFLib\myWebAspClient.student_Quiz_WCFLib.lectureModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\student_Quiz_WCFLib\service.wsdl" />
+    <None Include="Service References\student_Quiz_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_Quiz_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\student_Report_WCFLib\myWebAspClient.student_Report_WCFLib.getAllQuesByQuizIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\student_Report_WCFLib\myWebAspClient.student_Report_WCFLib.getAllQuizByStudentIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\student_Report_WCFLib\service.wsdl" />
+    <None Include="Service References\student_Report_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_Report_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_Report_WCFLib\service2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\student_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\student_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\student_Quiz_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\student_Quiz_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\student_Quiz_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\student_Report_WCFLib\configuration91.svcinfo" />
+    <None Include="Service References\student_Report_WCFLib\configuration.svcinfo" />
+    <None Include="Service References\student_Report_WCFLib\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Site.Master" />
+    <Content Include="Students\assets\css\bootstrap.css" />
+    <Content Include="Students\assets\css\style-responsive.css" />
+    <Content Include="Students\assets\css\style.css" />
+    <Content Include="Students\assets\css\table-responsive.css" />
+    <Content Include="Students\assets\css\to-do.css" />
+    <Content Include="Students\assets\css\zabuto_calendar.css" />
+    <Content Include="Students\assets\font-awesome\css\font-awesome.css" />
+    <Content Include="Students\assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Students\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Students\assets\img\StarF.gif" />
+    <Content Include="Students\assets\img\StarB.gif" />
+    <Content Include="Students\assets\img\StarW.gif" />
+    <Content Include="Students\assets\js\bootstrap-switch.js" />
+    <Content Include="Students\assets\js\bootstrap.min.js" />
+    <Content Include="Students\assets\js\calendar-conf-events.js" />
+    <Content Include="Students\assets\js\chartjs-conf.js" />
+    <Content Include="Students\assets\js\common-scripts.js" />
+    <Content Include="Students\assets\js\easy-pie-chart.js" />
+    <Content Include="Students\assets\js\form-component.js" />
+    <Content Include="Students\assets\js\gritter-conf.js" />
+    <Content Include="Students\assets\js\jquery-1.8.3.min.js" />
+    <Content Include="Students\assets\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Students\assets\js\jquery.backstretch.min.js" />
+    <Content Include="Students\assets\js\jquery.dcjqaccordion.2.7.js" />
+    <Content Include="Students\assets\js\jquery.js" />
+    <Content Include="Students\assets\js\jquery.nicescroll.js" />
+    <Content Include="Students\assets\js\jquery.scrollTo.min.js" />
+    <Content Include="Students\assets\js\jquery.sparkline.js" />
+    <Content Include="Students\assets\js\jquery.tagsinput.js" />
+    <Content Include="Students\assets\js\jquery.ui.touch-punch.min.js" />
+    <Content Include="Students\assets\js\morris-conf.js" />
+    <Content Include="Students\assets\js\sparkline-chart.js" />
+    <Content Include="Students\assets\js\tasks.js" />
+    <Content Include="Students\assets\js\zabuto_calendar.js" />
+    <Content Include="Students\assets\lineicons\index.html" />
+    <Content Include="Students\assets\lineicons\lte-ie7.js" />
+    <Content Include="Students\assets\lineicons\style.css" />
+    <Content Include="Students\Default.aspx" />
+    <Content Include="Students\Feed_All.aspx" />
+    <Content Include="Students\Module_View.aspx" />
+    <Content Include="Students\Quiz_All.aspx" />
+    <Content Include="Students\Quiz_Attend.aspx" />
+    <Content Include="Students\Report_Question.aspx" />
+    <Content Include="Students\Report_Quiz_All.aspx" />
+    <Content Include="tryAjax.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Site.Mobile.Master" />
+    <None Include="Service References\account_WCFLib\Arrays.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\account_WCFLib\service.wsdl" />
+    <None Include="Service References\account_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\account_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_WCFLib\myWCFClassLibrary.Professor.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_WCFLib\service.wsdl" />
+    <None Include="Service References\professor_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\professor_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_WCFLib\myWCFClassLibrary.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_WCFLib\service.wsdl" />
+    <None Include="Service References\student_WCFLib\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\student_WCFLib\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Students\.DS_Store" />
+    <Content Include="Students\assets\css\.DS_Store" />
+    <Content Include="Students\assets\font-awesome\css\.DS_Store" />
+    <Content Include="Students\assets\font-awesome\fonts\.DS_Store" />
+    <Content Include="Students\assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Students\assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Students\assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Students\assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Students\assets\fonts\.DS_Store" />
+    <Content Include="Students\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Students\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Students\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Students\assets\js\.DS_Store" />
+    <Content Include="Students\assets\lineicons\.DS_Store" />
+    <Content Include="Students\student.Master" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Feed_Report.aspx.cs">
+      <DependentUpon>Feed_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Feed_Report.aspx.designer.cs">
+      <DependentUpon>Feed_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Lectures_Create.aspx.cs">
+      <DependentUpon>Lectures_Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Lectures_Create.aspx.designer.cs">
+      <DependentUpon>Lectures_Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Quiz_Attend.aspx.cs">
+      <DependentUpon>Quiz_Attend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Quiz_Attend.aspx.designer.cs">
+      <DependentUpon>Quiz_Attend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\CreateQuiz.aspx.cs">
+      <DependentUpon>CreateQuiz.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\CreateQuiz.aspx.designer.cs">
+      <DependentUpon>CreateQuiz.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\professor.Master.cs">
+      <DependentUpon>professor.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\professor.Master.designer.cs">
+      <DependentUpon>professor.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Quiz_All.aspx.cs">
+      <DependentUpon>Quiz_All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Quiz_All.aspx.designer.cs">
+      <DependentUpon>Quiz_All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Quiz_Create.aspx.cs">
+      <DependentUpon>Quiz_Create.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Quiz_Create.aspx.designer.cs">
+      <DependentUpon>Quiz_Create.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Quiz_Report.aspx.cs">
+      <DependentUpon>Quiz_Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Quiz_Report.aspx.designer.cs">
+      <DependentUpon>Quiz_Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Quiz_Report2.aspx.cs">
+      <DependentUpon>Quiz_Report2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Quiz_Report2.aspx.designer.cs">
+      <DependentUpon>Quiz_Report2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\Quiz_View.aspx.cs">
+      <DependentUpon>Quiz_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\Quiz_View.aspx.designer.cs">
+      <DependentUpon>Quiz_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\tryGrid.aspx.cs">
+      <DependentUpon>tryGrid.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\tryGrid.aspx.designer.cs">
+      <DependentUpon>tryGrid.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Professors\WebForm2.aspx.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Professors\WebForm2.aspx.designer.cs">
+      <DependentUpon>WebForm2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\modules_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\professor_Feedback_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\professor_Report_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\student_Quiz_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\student_Report_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Feed_All.aspx.cs">
+      <DependentUpon>Feed_All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Feed_All.aspx.designer.cs">
+      <DependentUpon>Feed_All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Module_View.aspx.cs">
+      <DependentUpon>Module_View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Module_View.aspx.designer.cs">
+      <DependentUpon>Module_View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Quiz_All.aspx.cs">
+      <DependentUpon>Quiz_All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Quiz_All.aspx.designer.cs">
+      <DependentUpon>Quiz_All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Quiz_Attend.aspx.cs">
+      <DependentUpon>Quiz_Attend.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Quiz_Attend.aspx.designer.cs">
+      <DependentUpon>Quiz_Attend.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Report_Question.aspx.cs">
+      <DependentUpon>Report_Question.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Report_Question.aspx.designer.cs">
+      <DependentUpon>Report_Question.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\Report_Quiz_All.aspx.cs">
+      <DependentUpon>Report_Quiz_All.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\Report_Quiz_All.aspx.designer.cs">
+      <DependentUpon>Report_Quiz_All.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Students\student.Master.cs">
+      <DependentUpon>student.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Students\student.Master.designer.cs">
+      <DependentUpon>student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="testOption.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registration.aspx.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registration.aspx.designer.cs">
+      <DependentUpon>Registration.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\account_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\professor_Quiz_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\professor_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\student_WCFLib\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="tryAjax.aspx.cs">
+      <DependentUpon>tryAjax.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="tryAjax.aspx.designer.cs">
+      <DependentUpon>tryAjax.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\account_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\modules_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\professor_Feedback_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\professor_Quiz_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\professor_Report_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\professor_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\student_Quiz_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\student_Report_WCFLib\" />
+    <WCFMetadataStorage Include="Service References\student_WCFLib\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>60734</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:60734/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:60734/</IISAppRootUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

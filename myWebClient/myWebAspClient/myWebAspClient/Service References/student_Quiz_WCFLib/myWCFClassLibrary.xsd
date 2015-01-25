@@ -1,0 +1,321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/myWCFClassLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/myWCFClassLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="tblQuizDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_ModuleId" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Professor_id" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Quiz_id" type="xs:int" />
+      <xs:element minOccurs="0" name="isTimeup" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="quiz_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="quiz_end_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="quiz_length" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="quiz_status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="quiz_title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quiz_update" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="quiz_weightage" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="tblProfessor" nillable="true" type="tns:tblProfessor" />
+      <xs:element minOccurs="0" name="tblQuizQuestions" nillable="true" type="tns:ArrayOftblQuizQuestion" />
+      <xs:element minOccurs="0" name="tblQuizResults" nillable="true" type="tns:ArrayOftblQuizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuizDetail" nillable="true" type="tns:tblQuizDetail" />
+  <xs:complexType name="tblProfessor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_University_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Professor_id" type="xs:int" />
+      <xs:element minOccurs="0" name="department_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="middlename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pass_value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profile_pic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblLectures" nillable="true" type="tns:ArrayOftblLecture" />
+      <xs:element minOccurs="0" name="tblProfessorLogins" nillable="true" type="tns:ArrayOftblProfessorLogin" />
+      <xs:element minOccurs="0" name="tblProfessorModules" nillable="true" type="tns:ArrayOftblProfessorModule" />
+      <xs:element minOccurs="0" name="tblQuizDetails" nillable="true" type="tns:ArrayOftblQuizDetail" />
+      <xs:element minOccurs="0" name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+      <xs:element minOccurs="0" name="verification_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProfessor" nillable="true" type="tns:tblProfessor" />
+  <xs:complexType name="ArrayOftblLecture">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblLecture" nillable="true" type="tns:tblLecture" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblLecture" nillable="true" type="tns:ArrayOftblLecture" />
+  <xs:complexType name="tblLecture">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Module_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Professor_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Lecture_id" type="xs:int" />
+      <xs:element minOccurs="0" name="lecture_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lecture_status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lecture_time" nillable="true" type="ser:duration" />
+      <xs:element minOccurs="0" name="lecture_title" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblDepartmentModule" nillable="true" type="tns:tblDepartmentModule" />
+      <xs:element minOccurs="0" name="tblFeedbacks" nillable="true" type="tns:ArrayOftblFeedback" />
+      <xs:element minOccurs="0" name="tblProfessor" nillable="true" type="tns:tblProfessor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblLecture" nillable="true" type="tns:tblLecture" />
+  <xs:complexType name="tblDepartmentModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Department_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Module_id" type="xs:int" />
+      <xs:element minOccurs="0" name="module_code" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="module_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblLectures" nillable="true" type="tns:ArrayOftblLecture" />
+      <xs:element minOccurs="0" name="tblProfessorModules" nillable="true" type="tns:ArrayOftblProfessorModule" />
+      <xs:element minOccurs="0" name="tblStudentModules" nillable="true" type="tns:ArrayOftblStudentModule" />
+      <xs:element minOccurs="0" name="tblUniversityDepartment" nillable="true" type="tns:tblUniversityDepartment" />
+      <xs:element minOccurs="0" name="term" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblDepartmentModule" nillable="true" type="tns:tblDepartmentModule" />
+  <xs:complexType name="ArrayOftblProfessorModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProfessorModule" nillable="true" type="tns:tblProfessorModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProfessorModule" nillable="true" type="tns:ArrayOftblProfessorModule" />
+  <xs:complexType name="tblProfessorModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Module_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Professor_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_ProfessorModule_id" type="xs:int" />
+      <xs:element minOccurs="0" name="tblDepartmentModule" nillable="true" type="tns:tblDepartmentModule" />
+      <xs:element minOccurs="0" name="tblProfessor" nillable="true" type="tns:tblProfessor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProfessorModule" nillable="true" type="tns:tblProfessorModule" />
+  <xs:complexType name="ArrayOftblStudentModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblStudentModule" nillable="true" type="tns:tblStudentModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblStudentModule" nillable="true" type="tns:ArrayOftblStudentModule" />
+  <xs:complexType name="tblStudentModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Module_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Student_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_StudentModule_id" type="xs:int" />
+      <xs:element minOccurs="0" name="tblDepartmentModule" nillable="true" type="tns:tblDepartmentModule" />
+      <xs:element minOccurs="0" name="tblStudent" nillable="true" type="tns:tblStudent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblStudentModule" nillable="true" type="tns:tblStudentModule" />
+  <xs:complexType name="tblStudent">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_University_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Student_id" type="xs:int" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="course_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="department_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="firstname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lastname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="middlename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mobile" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pass_value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profile_pic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="semester" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblFeedbackResults" nillable="true" type="tns:ArrayOftblFeedbackResult" />
+      <xs:element minOccurs="0" name="tblStudentLogins" nillable="true" type="tns:ArrayOftblStudentLogin" />
+      <xs:element minOccurs="0" name="tblStudentModules" nillable="true" type="tns:ArrayOftblStudentModule" />
+      <xs:element minOccurs="0" name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+      <xs:element minOccurs="0" name="verification_code" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblStudent" nillable="true" type="tns:tblStudent" />
+  <xs:complexType name="ArrayOftblFeedbackResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblFeedbackResult" nillable="true" type="tns:tblFeedbackResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblFeedbackResult" nillable="true" type="tns:ArrayOftblFeedbackResult" />
+  <xs:complexType name="tblFeedbackResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Feedback_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_Student_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Feedback_result_id" type="xs:int" />
+      <xs:element minOccurs="0" name="feedback_answer" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="feedback_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="tblFeedback" nillable="true" type="tns:tblFeedback" />
+      <xs:element minOccurs="0" name="tblStudent" nillable="true" type="tns:tblStudent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblFeedbackResult" nillable="true" type="tns:tblFeedbackResult" />
+  <xs:complexType name="tblFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Lecture_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Feedback_id" type="xs:int" />
+      <xs:element minOccurs="0" name="end_date" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="feedback_value" nillable="true" type="xs:float" />
+      <xs:element minOccurs="0" name="tblFeedbackResults" nillable="true" type="tns:ArrayOftblFeedbackResult" />
+      <xs:element minOccurs="0" name="tblLecture" nillable="true" type="tns:tblLecture" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblFeedback" nillable="true" type="tns:tblFeedback" />
+  <xs:complexType name="ArrayOftblStudentLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblStudentLogin" nillable="true" type="tns:tblStudentLogin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblStudentLogin" nillable="true" type="tns:ArrayOftblStudentLogin" />
+  <xs:complexType name="tblStudentLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Student_id" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Student_login_id" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isLogin" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lastLogindate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="pass_value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="session_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblStudent" nillable="true" type="tns:tblStudent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblStudentLogin" nillable="true" type="tns:tblStudentLogin" />
+  <xs:complexType name="tblUniversity">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="PK_University_id" type="xs:int" />
+      <xs:element minOccurs="0" name="tblProfessors" nillable="true" type="tns:ArrayOftblProfessor" />
+      <xs:element minOccurs="0" name="tblStudents" nillable="true" type="tns:ArrayOftblStudent" />
+      <xs:element minOccurs="0" name="tblUniversityDepartments" nillable="true" type="tns:ArrayOftblUniversityDepartment" />
+      <xs:element minOccurs="0" name="university_name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+  <xs:complexType name="ArrayOftblProfessor">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProfessor" nillable="true" type="tns:tblProfessor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProfessor" nillable="true" type="tns:ArrayOftblProfessor" />
+  <xs:complexType name="ArrayOftblStudent">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblStudent" nillable="true" type="tns:tblStudent" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblStudent" nillable="true" type="tns:ArrayOftblStudent" />
+  <xs:complexType name="ArrayOftblUniversityDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblUniversityDepartment" nillable="true" type="tns:tblUniversityDepartment" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblUniversityDepartment" nillable="true" type="tns:ArrayOftblUniversityDepartment" />
+  <xs:complexType name="tblUniversityDepartment">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_University_id" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Department_id" type="xs:int" />
+      <xs:element minOccurs="0" name="department_name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblDepartmentModules" nillable="true" type="tns:ArrayOftblDepartmentModule" />
+      <xs:element minOccurs="0" name="tblUniversity" nillable="true" type="tns:tblUniversity" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblUniversityDepartment" nillable="true" type="tns:tblUniversityDepartment" />
+  <xs:complexType name="ArrayOftblDepartmentModule">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblDepartmentModule" nillable="true" type="tns:tblDepartmentModule" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblDepartmentModule" nillable="true" type="tns:ArrayOftblDepartmentModule" />
+  <xs:complexType name="ArrayOftblFeedback">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblFeedback" nillable="true" type="tns:tblFeedback" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblFeedback" nillable="true" type="tns:ArrayOftblFeedback" />
+  <xs:complexType name="ArrayOftblProfessorLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblProfessorLogin" nillable="true" type="tns:tblProfessorLogin" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblProfessorLogin" nillable="true" type="tns:ArrayOftblProfessorLogin" />
+  <xs:complexType name="tblProfessorLogin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Professor_id" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Professor_login_id" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isLogin" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="lastLogindate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="pass_value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="session_id" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="status" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="tblProfessor" nillable="true" type="tns:tblProfessor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblProfessorLogin" nillable="true" type="tns:tblProfessorLogin" />
+  <xs:complexType name="ArrayOftblQuizDetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuizDetail" nillable="true" type="tns:tblQuizDetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuizDetail" nillable="true" type="tns:ArrayOftblQuizDetail" />
+  <xs:complexType name="ArrayOftblQuizQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuizQuestion" nillable="true" type="tns:tblQuizQuestion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuizQuestion" nillable="true" type="tns:ArrayOftblQuizQuestion" />
+  <xs:complexType name="tblQuizQuestion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Quiz_id" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Question_id" type="xs:int" />
+      <xs:element minOccurs="0" name="hint" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="marks" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="question" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="question_type" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblQuizDetail" nillable="true" type="tns:tblQuizDetail" />
+      <xs:element minOccurs="0" name="tblQuizOptions" nillable="true" type="tns:ArrayOftblQuizOption" />
+      <xs:element minOccurs="0" name="tblQuizResults" nillable="true" type="tns:ArrayOftblQuizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuizQuestion" nillable="true" type="tns:tblQuizQuestion" />
+  <xs:complexType name="ArrayOftblQuizOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuizOption" nillable="true" type="tns:tblQuizOption" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuizOption" nillable="true" type="tns:ArrayOftblQuizOption" />
+  <xs:complexType name="tblQuizOption">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_Question_id" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_Option_id" type="xs:int" />
+      <xs:element minOccurs="0" name="isAnswer" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="option_value" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="tblQuizQuestion" nillable="true" type="tns:tblQuizQuestion" />
+      <xs:element minOccurs="0" name="tblQuizResults" nillable="true" type="tns:ArrayOftblQuizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuizOption" nillable="true" type="tns:tblQuizOption" />
+  <xs:complexType name="ArrayOftblQuizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tblQuizResult" nillable="true" type="tns:tblQuizResult" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOftblQuizResult" nillable="true" type="tns:ArrayOftblQuizResult" />
+  <xs:complexType name="tblQuizResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FK_OptionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_QuestionId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_QuizId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="FK_studentId" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="PK_QuestionResult_Id" type="xs:int" />
+      <xs:element minOccurs="0" name="answer" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="isAnswered" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="marks" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="tblQuizDetail" nillable="true" type="tns:tblQuizDetail" />
+      <xs:element minOccurs="0" name="tblQuizOption" nillable="true" type="tns:tblQuizOption" />
+      <xs:element minOccurs="0" name="tblQuizQuestion" nillable="true" type="tns:tblQuizQuestion" />
+      <xs:element minOccurs="0" name="update" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="tblQuizResult" nillable="true" type="tns:tblQuizResult" />
+</xs:schema>

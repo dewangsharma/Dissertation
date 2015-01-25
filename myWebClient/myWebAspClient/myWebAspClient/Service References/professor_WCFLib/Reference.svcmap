@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7995f936-6e54-4bd3-89e3-efa47b4415ae" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorProfile/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="fcb2a7d3-7bc5-463a-a4ba-47cd7c69d92f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorProfile/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="f77b4dec-5cab-4075-bae2-932f90f13fda" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorProfile/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="c3642711-4a65-4e7b-be87-2c3d7046e775" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorProfile/mex" />
+    <MetadataFile FileName="myWCFClassLibrary.Professor.xsd" MetadataType="Schema" ID="3f58dfd3-d2b9-46fd-b8d5-a1943bf5421b" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorProfile/mex" />
+    <MetadataFile FileName="Arrays.xsd" MetadataType="Schema" ID="d3710240-8da9-49d3-bd61-cd9929e08603" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/myWCFClassLibrary/Professor/ProfessorProfile/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
